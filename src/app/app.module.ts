@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+/* Ngrx */
+import { StoreModule } from '@ngrx/store';
+
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports for loading & configuring the in-memory web api
@@ -32,6 +35,7 @@ import { UserModule } from './user/user.module';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(ProductData),
     UserModule,
+    StoreModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent],
