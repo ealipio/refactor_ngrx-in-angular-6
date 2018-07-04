@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 /* Ngrx */
 import { StoreModule } from '@ngrx/store';
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports for loading & configuring the in-memory web api
@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './home/page-not-found/page-not-found.comp
 
 /* Feature Modules */
 import { UserModule } from './user/user.module';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,11 @@ import { UserModule } from './user/user.module';
     HttpClientInMemoryWebApiModule.forRoot(ProductData),
     UserModule,
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      name: 'Demo pe',
+      maxAge: 2,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
