@@ -1,4 +1,4 @@
-# learing routing  and ngrx from pluralsight
+# Learning routing and ngrx in angular from pluralsight:
 
 I made this repository while was attending to a course of Deborah Kurata in pluralsight. 
 
