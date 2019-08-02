@@ -11,7 +11,7 @@ import { NumberValidators } from '../../shared/number.validator';
 @Component({
   selector: 'pm-product-edit',
   templateUrl: './product-edit.component.html',
-  styleUrls: ['./product-edit.component.css'],
+  styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit, OnDestroy {
   pageTitle = 'Product Edit';
@@ -33,14 +33,14 @@ export class ProductEditComponent implements OnInit, OnDestroy {
       productName: {
         required: 'Product name is required.',
         minlength: 'Product name must be at least three characters.',
-        maxlength: 'Product name cannot exceed 50 characters.',
+        maxlength: 'Product name cannot exceed 50 characters.'
       },
       productCode: {
-        required: 'Product code is required.',
+        required: 'Product code is required.'
       },
       starRating: {
-        range: 'Rate the product between 1 (lowest) and 5 (highest).',
-      },
+        range: 'Rate the product between 1 (lowest) and 5 (highest).'
+      }
     };
 
     // Define an instance of the validator for use with this form,
@@ -53,15 +53,11 @@ export class ProductEditComponent implements OnInit, OnDestroy {
     this.productForm = this.fb.group({
       productName: [
         '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
+        [Validators.required, Validators.minLength(3), Validators.maxLength(50)]
       ],
       productCode: ['', Validators.required],
       starRating: ['', NumberValidators.range(1, 5)],
-      description: '',
+      description: ''
     });
 
     // Watch for changes to the currently selected product
@@ -110,7 +106,7 @@ export class ProductEditComponent implements OnInit, OnDestroy {
         productName: this.product.productName,
         productCode: this.product.productCode,
         starRating: this.product.starRating,
-        description: this.product.description,
+        description: this.product.description
       });
     }
   }
